@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Old course address: course.html?c=<course page address>.
+       Each course now has its own page, for example ai-fluency-for-the-workplace.html.
+       This file only forwards old links there and is kept out of search results. -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Course Pages | USAII® AI Micro Credentials</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/course-content.js"></script>
+  <script>
+    (function () {
+      var key = new URLSearchParams(location.search).get("c") || "";
+      var pages = window.MC_COURSE_PAGES || {};
+      for (var id in pages) {
+        if (id === key || pages[id].slug === key) { location.replace(pages[id].slug + ".html" + location.hash); return; }
+      }
+      location.replace("courses.html");
+    })();
+  </script>
+</head>
+<body>
+  <main class="container" style="padding:120px 24px;text-align:center">
+    <h1 style="font-size:32px">Opening the course page</h1>
+    <p class="section-lead" style="margin:0 auto 26px">Each course has its own page now.</p>
+    <ul style="list-style:none;padding:0;margin:0 0 26px;line-height:2">
+      <li><a href="ai-fluency-for-the-workplace.html">AI Fluency for the Workplace</a></li>
+      <li><a href="prompting-and-context-design.html">Prompting and Context Design</a></li>
+      <li><a href="agentic-ai-foundations.html">Agentic AI Foundations</a></li>
+      <li><a href="rag-and-enterprise-knowledge-assistants.html">RAG and Enterprise Knowledge Assistants</a></li>
+      <li><a href="ai-for-data-analysis-excel-and-bi.html">AI for Data Analysis, Excel, and BI</a></li>
+      <li><a href="ai-for-project-management.html">AI for Project Management</a></li>
+      <li><a href="ai-for-hr-recruiting-and-workforce-planning.html">AI for HR, Recruiting, and Workforce Planning</a></li>
+      <li><a href="ai-for-marketing-and-content-creation.html">AI for Marketing and Content Creation</a></li>
+    </ul>
+    <a class="btn" href="courses.html">View All Courses</a>
+  </main>
+</body>
+</html>
